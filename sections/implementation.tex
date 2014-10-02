@@ -2,6 +2,10 @@
 To implement the world, we have edited the \textit{TinyRoom} sample included in the Oculus SDK. 
 We multiply the input head yaw by a factor between 0,5 and 1,5.
 We have not yet created our virtual environment, we are confident that we can do this in a relatively small amount of time because we do know how it should be done.
-Also the implementation of the color-changing dot should be relatively straughtforward using GL.
+Also the implementation of the color-changing dot should be relatively straightforward using GL.
+
+A big challenge yet to conquer is positional tracking.
+The Oculus SDK 2 is equipped with a positional tracker but it seems not to be optimized for walking around in a room.
+We have tried to overcome this problem by using Bluetooth triangulation, but it was too slow to be feasible.
 
 
