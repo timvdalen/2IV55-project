@@ -1,15 +1,17 @@
+---Header Experiments---
 Before we start analysing the results we first discuss the experiment again, because we had to change the expermint a bit due to a lack of time, testpersons and software limitations. In short the original idea was that a person person would walk a route in the virtual world, wearing the Oculus rift. The person would do this 10 times (each with a different gain) and afterwards a couple of questions would be asked about the rotations in the virtual world and real world. \\
 \\
 When we started to work test our environment we ran into a problem. We were told the Oculus had motion tracking, but this was not exactly true. In fact the Oculus could track if the testperson moved 1 or 2 steps to the side or front but not more than that. So we were not able to let the persons walk the route in fact, but we came up with a different solution. We used a Playstation controller were we only enabled the joystick to move forward. All the other functions were disabled. So in fact the testperson would stand in a spot and move forward with the controller, but when a turn is reached the person had to move with his/her body to rotate in the virtual world. In this case we were still able to measure the rotations.\\
 \\
-When we solved this problem we encoutered another problem. We were only allowed to borrow the Oculus form the Fontys 1 time per week. The first time we got an Oculus with a broken HDMI port, so we were not able to get our program running on the Oculus. The second time we were busy fixing the motion tracking problem, so unfortunately we had only one session left to really do tests. This caused that we were only able to do 19 test as you can see in table \ref{tab1}. So we do not have a lot of data, but we can try to analyze this data and find some similarities or some peculiarities. \\
+When we solved this problem we encoutered another problem. We were only allowed to borrow the Oculus form the Fontys 1 time per week. The first time we got an Oculus with a broken HDMI port, so we were not able to get our program running on the Oculus. The second time we were busy fixing the motion tracking problem, so unfortunately we had only one session left to really do tests but at that moment we dit not have a dot implemented that would always stay in front of the test person and changed of color after several times. Since this would not be trivial to implent we decided to let the testperson do some simple calculations. The only goal of this dot was that people would focus on this dot instead of focussing on the road. The calculations achieved the same goal. This caused that we were only able to do 19 test as you can see in table \ref{tab1}. So we do not have a lot of data, but we can try to analyze this data and find some similarities or some peculiarities. \\
 \\
-At last our idea was to let a person walk the same route about 10 times and afterwards ask if he/she noticed anything in the rotations, but we missed a flaw in this idea. It would be very hard for the person to remember if there was something wrong in trial 1 or 2 (and what was wrong) after 10 trials. He/she could easily mix up trials and thats not what we want. So we choose to let a person only take 1 trial and then find another test person. Now that we redifend our experiment we can discuss the results. 
+At last our idea was to let a person walk the same route about 10 times and afterwards ask if he/she noticed anything in the rotations, but we missed a flaw in this idea. It would be very hard for the person to remember if there was something wrong in trial 1 or 2 (and what was wrong) after 10 trials. He/she could easily mix up trials and thats not what we want. So we choose to let a person only take 1 trial and then find another test person. Now that we redifend our experiment we can discuss the results. \\
+
 \begin{table}
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|p{4.5cm}|}
 \hline
-Testperson	&	Gain	&	Calculations	&	Rotation	&	Sex	&	Tech Issues	&	Remarks \\
+\textbf{Testperson}	&	\textbf{Gain}	&	\textbf{Calculations}	&	\textbf{Rotation}	&	\textbf{Sex}	&	\textbf{Tech Issues}	&	\textbf{Remarks}\\
 \hline
 1	&	-0.5	&	No	&	Less	&	Female	&	No	&	Felt nauseous and did not finish the experiment\\ \hline
 2	&	-0.4	&	No	&	Equal	&	Female	&	No	&	Felt a bit dizzy\\ \hline
@@ -37,35 +39,5 @@ Testperson	&	Gain	&	Calculations	&	Rotation	&	Sex	&	Tech Issues	&	Remarks \\
 \end{table}
 \newpage
 
-In our initial report we stated that we want to examine the following:
-At what rotational gains does the user notice that the virtual world and the real world rotations are different?
-And is this number different when a user is engaged in a task versus when a user is just walking around without specific tasks?
-
-This is something that was already investigated by some researchers \cite{steinicke2}. 
-Only they had a very small test-group. 
-So we would like to repeat their experiment and try to verify their results. 
-We will perform the experiment as described in the following section.
-
-The experiment consists of two cases. 
-We will conduct every case with a test group of 5 people. 
-The idea is that for every test-group the people have to wear an Oculus Rift. 
-Case one consists of following a (virtual) route. 
-The test person has to follow this route. 
-We start with a normal rotation gain and we will alter this gain a bit after the first try. 
-This means that a person has to walk the route a couple of times. 
-The gain will be in the range from 0,5 to 1,5 with steps of 0,1. 
-At start we strive to let a person walk the route 10 times (each time with 0,1 difference). 
-If this takes to long we will take bigger steps and let them walk the route less times. 
-At the end, when the test person has finished the route we will ask them if they noticed something strange during the experiment and if they did what it was. 
-If they do not know we will ask if they noticed something about the rotations and if they think they rotated more or less than in the real world. 
-After this the experiment is finished for case one.
-
-In the other case the test person will be asked to focus on a dot which is constantly in front of them and raise their hands when it changes color. 
-They have to walk the same route a couple of times with a different gain. 
-Afterwards the same questions are asked. 
-It is important that our test persons do not participate in both the cases, because once they answered the question they know where they have to pay attention at and therefore would give crooked results.
-
-The route we will use for this experiment will be a simple route with a lot of turns to test the gains. 
-The goal of this experiment is to discover at what rotational gains people notice that in the real world they are not rotating the same as in the virtual world. 
-We expect that the persons who are focusing on the dot do not notice the difference in rotations as quick as people who are focusing on the route. 
-
+---HEADER RESULTS---
+Our goal was to discover if people who were busy doing a task would less (or more) notice that they are rotating with a different gain than people who can just focus on the road. We expected that a person who was doing a task would less notice these gains, because its brain was busy doing other stuff. Now if we look at the results in table \ref{tab1} we see a couple of collumns. The first collumn denotes the testperson (or the number of the test). The second collumn represents the gain. In the experiment report we discussed that we would like to experiment with the gain from values of 0,5 till 1,5 where a gain of 1 meant that when a person turns with 1 degree in real life he also turns 1 degree in the virtual world. Preparing the experiment we noticed that this was not implemented in the Oculus in this way. A gain of 1 means that a person turns 1 degree in the real world and 2 degrees in the virtual world. This is not wat we wanted so we let the gain fluctuate from -0,5 till 0,5 to get the same effectst that we wanted. In the third collumn you see if the testperson did calculations during the experiment or not. After every experiment we asked the testperson if he/she thought that she turned less/equal/more degrees in the virtual world than in the real world. This is denoted in collumn 4. In collumn 5 the sex of the testperson was denoted and in collumn 6 we state if there were some techinical issues with the Oculus during the experiment which caused us to redo the experiment. In the last collumn you can see if there are any remarks for the experiment.
