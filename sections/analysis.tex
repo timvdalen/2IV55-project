@@ -1,86 +1,91 @@
 \subsection{Bottlenecks in experiment design}
-We change the experiment a bit due to a lack of time, test subjects and software limitations. 
-In short the original idea was that a test subject would walk a route in the virtual world, wearing an Oculus rift. 
-The person would do this 10 times, each time with a different rotational gain. 
-Afterwards, we would ask them a couple of questions about their perception of their rotation in the virtual world as compared to their rotation in the real world. 
+We change the experiment a bit due to a lack of time, test subjects and software limitations.
+In short the original idea was that a test subject would walk a route in the virtual world, wearing an Oculus rift.
+The person would do this 10 times, each time with a different rotational gain.
+Afterwards, we would ask them a couple of questions about their perception of their rotation in the virtual world as compared to their rotation in the real world.
 
-In stead of having people actually walk a path, we use a Playstation 3 controller where we only enabled the joystick to move forward. 
-The test subject stands in a spot and moves forward in the virtual world using the controller. 
-When a turn is reached the subject rotates his/her entire body to rotate in the virtual world. 
+Instead of having people actually walk a path, we use a Playstation 3 controller which only allows participants to move in the direction they are facing.
+The test subject stands in a spot and moves forward in the virtual world using the controller.
+When the path reaches a bend, the gyroscopic sensors of the Oculus Rift are to be used to rotate in the virtual world.
+We had the test subjects rotate their entire body, instead of just the head, as turning just the head might give away the gains used, due to straining of the neck.
+Additionally, when walking in real life, changing direction is mostly done with the entire body as well.
 
-We skip implementing a color-changing dot in favor of an easier solution that distracts test subjects from focusing on the path too much, we let the test subjects do simple (arithmetic) calculations.
+Altering code to accommodate a color-changing dot proved to unfeasible in the given amount of time. 
+A more practical and perhaps even more effective method to distract the test subjects from focusing on the path too much, is to have the test subjects do simple (arithmetic) calculations.
 This simultaneously serves as the previously planned task in which we engage test subjects.
-So we do not have a lot of data, but we analyze this data and find some similarities or some peculiarities.
 
 Asking the questions after multiple runs could result in the test subject mixing up test runs.
 On the other hand, asking the questions after every single test run may cause the test subject to be biased when doing the next run.
 Therefore, we let each test subject only do the experiment once and not 10 times.
+As a result, however, we did not manage to gather a lot of data, but we did manage to analyze this data and find some similarities or some peculiarities.
 
 \subsection{Results}
 Now that we have redefined our experiment we discuss the results.
 The goal of the experiment is to investigate at what rotational gains the test subjects notice that the virtual world and the real world differ.
 Secondly, we are interested in knowing whether this outcome is different when test subjects are engaged in a task (which we have redefined to be simple arithmetic).
 
-Now if we look at the results in table \ref{tab:experimentResults} we see a couple of columns. 
-The first column denotes the test subject (or the number of the test). 
-The second column represents the rotational gain in our implementation, this number is different from the gain as defined by Walker \cite{jwalker}. 
-Here, 0 means a 1-to-1 mapping from real world to virtual world rotation. 
+Now if we look at the results in table \ref{tab:experimentResults} we see a couple of columns.
+The first column denotes the test subject (or the number of the test).
+The second column represents the rotational gain in our implementation, this number is different from the gain as defined by Walker \cite{jwalker}.
+Here, 0 means a 1-to-1 mapping from real world to virtual world rotation.
 A negative value represents the factor with which virtual world rotation is less than the real world rotation.
 Similarly, the positive value represents the factor with which the virtual world rotation is more than the real world rotation.
 
 \begin{table}
 \begin{center}
-\begin{tabular}{|c|c|c|c|c|c|p{4.5cm}|}
+\begin{tabular}{|c|c|c|c|c|p{4.5cm}|}
 \hline
-\textbf{Testperson}	&	\textbf{Gain}	&	\textbf{Calculations}	&	\textbf{Rotation}	&	\textbf{Sex}	&	\textbf{Tech Issues}	&	\textbf{Remarks}\\
+\textbf{Testperson}	&	\textbf{Gain}	&	\textbf{Calculations}	&	\textbf{Rotation}	&	\textbf{Sex}	&	\textbf{Remarks}\\
 \hline
-1	&	-0.5	&	No	&	Less	&	Female	&	No	&	Felt nauseous and did not finish the experiment\\ \hline
-2	&	-0.4	&	No	&	Equal	&	Female	&	No	&	Felt a bit dizzy\\ \hline
-3	&	-0.3	&	No	&	Equal	&	Male	&	No	&	Had a little bit of a headache afterwards, but this could be due to his high blood pressure\\ \hline
-4	&	-0.2	&	No	&	Less	&	Female	&	No	&	None\\ \hline
-5	&	0	&	No	&	Equal	&	Male	&	Yes	&	Had to redo the experiment due to technical issues\\ \hline
-6	&	0.2	&	No	&	Equal	&	Male	&	No	&	None\\ \hline
-7	&	0.3	&	No	&	Equal	&	Male	&	No	&	None\\ \hline
-8	&	0.4	&	No	&	Equal	&	Male	&	No	&	None\\ \hline
-9	&	0.5	&	No	&	Equal	&	Male	&	Yes	&	Had to redo the experiment due to technical issues\\ \hline
-10	&	-0.5	&	Yes	&	More	&	Male	&	Yes	&	Had to redo the experiment due to technical issues and felt nauseous\\ \hline
-11	&	-0.3	&	Yes	&	Equal	&	Male	&	No	&	None\\ \hline
-12	&	-0.2	&	Yes	&	less	&	Male	&	No	&	None\\ \hline
-13	&	-0.1	&	Yes	&	Equal	&	Male	&	Yes	&	Had to redo the experiment due to technical issues and had consumed some alcohol before\\ \hline
-14	&	0	&	Yes	&	More	&	Male	&	No	&	Started to feel nauseous, but had this problem really quick\\ \hline
-15	&	0.1	&	Yes	&	More	&	Male	&	No	&	Felt dizzy\\ \hline
-16	&	0.2	&	Yes	&	Equal	&	Male	&	No	&	None\\ \hline
-17	&	0.3	&	Yes	&	More	&	Male	&	No	&	None\\ \hline
-18	&	0.4	&	Yes	&	Equal	&	Male	&	No	&	Felt dizzy\\ \hline
-19	&	0.5	&	Yes	&	Less	&	Male	&	No	&	Had consumed some alcohol before\\ \hline
+1	&	-0.5	&	No	&	Less	&	Female	&	Felt nauseous to the point that she did not finish the experiment\\ \hline
+2	&	-0.4	&	No	&	Equal	&	Female	&	Felt a bit dizzy\\ \hline
+3	&	-0.3	&	No	&	Equal	&	Male	&	Had a minor headache afterwards, but this could be due to his high blood pressure\\ \hline
+4	&	-0.2	&	No	&	Less	&	Female	&	None\\ \hline
+5	&	0	&	No	&	Equal	&	Male	&	None\\ \hline
+6	&	0.2	&	No	&	Equal	&	Male	&	None\\ \hline
+7	&	0.3	&	No	&	Equal	&	Male	&	None\\ \hline
+8	&	0.4	&	No	&	Equal	&	Male	&	None\\ \hline
+9	&	0.5	&	No	&	Equal	&	Male	&	None\\ \hline
+10	&	-0.5	&	Yes	&	More	&	Male	&	Felt nauseous\\ \hline
+11	&	-0.3	&	Yes	&	Equal	&	Male	&	None\\ \hline
+12	&	-0.2	&	Yes	&	less	&	Male	&	None\\ \hline
+13	&	-0.1	&	Yes	&	Equal	&	Male	&	Had consumed a small amount alcohol beforehand\\ \hline
+14	&	0	&	Yes	&	More	&	Male	&	Started to feel nauseous, but stated he was prone to feeling nauseous\\ \hline
+15	&	0.1	&	Yes	&	More	&	Male	&	Felt dizzy\\ \hline
+16	&	0.2	&	Yes	&	Equal	&	Male	&	None\\ \hline
+17	&	0.3	&	Yes	&	More	&	Male	&	None\\ \hline
+18	&	0.4	&	Yes	&	Equal	&	Male	&	Felt dizzy\\ \hline
+19	&	0.5	&	Yes	&	Less	&	Male	&	Had consumed a small amount alcohol beforehand\\ \hline
 \end{tabular}
 \label{tab:experimentResults}
 \caption{Results of the experiment}
 \end{center}
 \end{table}
 
-The third column of table \ref{tab:experimentResults} indicates whether or not the test subject did simple arithmetic calculations during the experiment. 
+The third column of table \ref{tab:experimentResults} indicates whether or not the test subject did simple arithmetic calculations during the experiment.
 Column 4 denotes the test subjects'  response to the following question: ``Did you think your rotation in the virtual world was less, equal or more than your rotation in the real world?"
-In column 5 the sex of the test subject is shown.% and in column 6 we state if there were some techinical issues with the Oculus during the experiment which caused us to redo the experiment. //TODO: Ik stel voor die hele kolom eruit te gooien
+In column 5 the gender of the test subject is shown.
 In the last column you can see if there are any remarks for the experiment.
 
-When we look at the remarks there is one thing that stands out, a lot of persons felt nauseous or dizzy after the experiment. 
-Two people felt nauseous, three people felt dizzy and 1 person got a headache doing this experiment. 
-When you look closer you see that this happens 4 out of 6 times with a gain larger than 0.3 difference from the normal situation. 
-This shows us that the human mind does indeed respond to the change in the gain. 
+The first thing that stands out from the results, is that a lot of subjects reported to feeling dizzy or nauseous after the experiment.
+Two people felt nauseous, three people felt dizzy and 1 person got a headache doing this experiment.
+However, this seems to happen over the entire spectrum of gains tested.
+Even though some people seem to be more prone to feeling nauseous from using the Oculus rift then others, having a negative gain (i.e. having to turn further in the real world to achieve a certain rotation in the virtual world) seems to intensify this sensation.
+In fact, a test subject opted to stop the experiment due to being very uncomfortable wearing the headset with a negative gain.
+This shows us that the human mind might in fact be influenced by the gain.
 
-Especially on the negative gains people felt a little bit sick after (or even during) the experiment. 
-Though this is not in the results we tried the Oculus ourself with gains of -0,5 and half of our group got nauseous too, so when you make the gain to small this has a very negative effect on the body (though we cannot say this for sure since we do not have a lot of tests which confirm this statement). 
-A possible explanation for this is (including the cases with the positive gain) that people wear the Oculus for the first time in their life and they have not worn anything like this in their life before. 
-For a lot of people this technique is really new to them and when you put on the headset a lot of people first have to get used to the Oculus. 
-It is not uncommon that some body's have a more hard time to get used to this Oculus than other bodies (especially when the gains are different to). 
+Even though this is not incorporated in the results we tried the Oculus ourselves with negative gains of up to -0,5 and half of our group got nauseous as well, so when you make the gain too small this has a very negative effect on the body (though we cannot say this for sure since we do not have a lot of tests which confirm this statement).
+A possible explanation for this is (including the cases with the positive gain) that people wear the Oculus for the first time in their lives and they have not worn anything like this in their life before.
+For a lot of people this technique is really new to them and when you put on the headset a lot of people first have to get used to the Oculus.
+It is not uncommon for some people to have more trouble adjusting to the Oculus than others (especially having different gains).
 This could explain the nausea and the dizziness.
+People becoming slightly dizzy to the point of feeling nauseous is actually a side effect of the Oculus that has been reported in the media as well.
 
 %//TODO WAAROM ANDERSOM DAN WAT WIJ DACHTEN BETREFFENDE DE HOEK MEER/GELIJK/MINDER
 
 Another interesting fact is that a lot of people had no notion of what was happening in the virtual world compared to the real world.
-In fact it looked the same for a lot of people. But what would happen when there are objects in the room the people are walking through? 
-Both the experiment of Walker \cite{jwalker} and ours take place in an empty virtual room with just a path. 
+In fact it looked the same for a lot of people. But what would happen when there are objects in the room the people are walking through?
+Both the experiment of Walker \cite{jwalker} and ours take place in an empty virtual room with just a path.
 An interesting area for future research is to investigate how the results would differ if the virtual space had more noise, such as buildings or trees around.
-Then when a person turns it he or she may notice faster that there is something 'wrong'  with the virtual world. 
+Then when a person turns it he or she may notice faster that there is something 'wrong'  with the virtual world.
 
