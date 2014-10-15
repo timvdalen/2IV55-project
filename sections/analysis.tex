@@ -1,11 +1,31 @@
----Header Experiments---
-Before we start analysing the results we first discuss the experiment again, because we had to change the expermint a bit due to a lack of time, testpersons and software limitations. In short the original idea was that a person person would walk a route in the virtual world, wearing the Oculus rift. The person would do this 10 times (each with a different gain) and afterwards a couple of questions would be asked about the rotations in the virtual world and real world. \\
-\\
-When we started to work test our environment we ran into a problem. We were told the Oculus had motion tracking, but this was not exactly true. In fact the Oculus could track if the testperson moved 1 or 2 steps to the side or front but not more than that. So we were not able to let the persons walk the route in fact, but we came up with a different solution. We used a Playstation controller were we only enabled the joystick to move forward. All the other functions were disabled. So in fact the testperson would stand in a spot and move forward with the controller, but when a turn is reached the person had to move with his/her body to rotate in the virtual world. In this case we were still able to measure the rotations.\\
-\\
-When we solved this problem we encoutered another problem. We were only allowed to borrow the Oculus form the Fontys 1 time per week. The first time we got an Oculus with a broken HDMI port, so we were not able to get our program running on the Oculus. The second time we were busy fixing the motion tracking problem, so unfortunately we had only one session left to really do tests but at that moment we dit not have a dot implemented that would always stay in front of the test person and changed of color after several times. Since this would not be trivial to implent we decided to let the testperson do some simple calculations. The only goal of this dot was that people would focus on this dot instead of focussing on the road. The calculations achieved the same goal. This caused that we were only able to do 19 test as you can see in table \ref{tab1}. So we do not have a lot of data, but we can try to analyze this data and find some similarities or some peculiarities. \\
-\\
-At last our idea was to let a person walk the same route about 10 times and afterwards ask if he/she noticed anything in the rotations, but we missed a flaw in this idea. It would be very hard for the person to remember if there was something wrong in trial 1 or 2 (and what was wrong) after 10 trials. He/she could easily mix up trials and thats not what we want. So we choose to let a person only take 1 trial and then find another test person. Now that we redifend our experiment we can discuss the results. \\
+\subsection{Experiments}
+Before we start analysing the results we first discuss the experiment again, because we had to change the expermint a bit due to a lack of time, testpersons and software limitations. 
+In short the original idea was that a person person would walk a route in the virtual world, wearing the Oculus rift. 
+The person would do this 10 times (each with a different gain) and afterwards a couple of questions would be asked about the rotations in the virtual world and real world. 
+
+When we started to work test our environment we ran into a problem. 
+We were told the Oculus had motion tracking, but this was not exactly true. 
+In fact the Oculus could track if the testperson moved 1 or 2 steps to the side or front but not more than that. 
+So we were not able to let the persons walk the route in fact, but we came up with a different solution. 
+We used a Playstation 3 controller were we only enabled the joystick to move forward. 
+All the other functions were disabled. 
+So in fact the testperson would stand in a spot and move forward with the controller, but when a turn is reached the person had to move with his/her body to rotate in the virtual world. 
+In this case we were still able to measure the rotations.
+
+When we solved this problem we encoutered another problem. 
+We were only allowed to borrow the Oculus form the Fontys 1 time per week. 
+The first time we got an Oculus with a broken HDMI port, so we were not able to get our program running on the Oculus. 
+The second time we were busy fixing the motion tracking problem, so unfortunately we had only one session left to really do tests but at that moment we dit not have a dot implemented that would always stay in front of the test person and changed of color after several times. 
+Since this would not be trivial to implent we decided to let the testperson do some simple calculations. 
+The only goal of this dot was that people would focus on this dot instead of focussing on the road. 
+The calculations achieved the same goal. 
+This caused that we were only able to do 19 test as you can see in table \ref{tab1}. 
+So we do not have a lot of data, but we can try to analyze this data and find some similarities or some peculiarities.
+
+At last our idea was to let a person walk the same route about 10 times and afterwards ask if he/she noticed anything in the rotations, but we missed a flaw in this idea. 
+It would be very hard for the person to remember if there was something wrong in trial 1 or 2 (and what was wrong) after 10 trials. 
+He/she could easily mix up trials and thats not what we want. 
+So we choose to let a person only take 1 trial and then find another test person. Now that we redifend our experiment we can discuss the results.
 
 \begin{table}
 \begin{center}
@@ -37,13 +57,40 @@ At last our idea was to let a person walk the same route about 10 times and afte
 \caption{Results of the experiment}
 \end{center}
 \end{table}
-\newpage
 
----HEADER RESULTS---
-Our goal was to discover if people who were busy doing a task would less (or more) notice that they are rotating with a different gain than people who can just focus on the road. We expected that a person who was doing a task would less notice these gains, because its brain was busy doing other stuff. Now if we look at the results in table \ref{tab1} we see a couple of collumns. The first collumn denotes the testperson (or the number of the test). The second collumn represents the gain. In the experiment report we discussed that we would like to experiment with the gain from values of 0,5 till 1,5 where a gain of 1 meant that when a person turns with 1 degree in real life he also turns 1 degree in the virtual world. Preparing the experiment we noticed that this was not implemented in the Oculus in this way. A gain of 1 means that a person turns 1 degree in the real world and 2 degrees in the virtual world. This is not wat we wanted so we let the gain fluctuate from -0,5 till 0,5 to get the same effectst that we wanted. In the third collumn you see if the testperson did calculations during the experiment or not. After every experiment we asked the testperson if he/she thought that she turned less/equal/more degrees in the virtual world than in the real world. This is denoted in collumn 4. In collumn 5 the sex of the testperson was denoted and in collumn 6 we state if there were some techinical issues with the Oculus during the experiment which caused us to redo the experiment. In the last collumn you can see if there are any remarks for the experiment.\\
-\\
-Now if we look at the remarks there is one thing that stands out. A lot of persons felt nauseous or dizzy after the experiment. Two people felt nauseous, three people felt dizzy and 1 person got a headache doing this experiment. When you look closer you see that this happens four out of 6 times with a gain larger than 0,3 difference from the normal situation. This shows us that the human body does indeed respond to the change in the gain. It could be possible that the brain did not perceive what happened exactly, but the body felt something what was wrong and made it nauseous or dizzy. Especially on the negative gains people felt a little bit sick after (or even during) the experiment. Though this is not in the results we tried the Oculus ourself with gains of -0,5 and half of our group got nausious too, so when you make the gain to small this has a very negative effect on the body (though we cannot say this for sure since we do not have a lot of tests which confirm this statement). A possible explanation for this is (including the cases with the positve gain) that people wear the Oculus for the first time in their life and they have not worn anything like this in their life before. For a lot of people this thechinique is realy new to them and when you put on the headset a lot of people first have to get used to the Oculus. It is not uncommon that some body's have a more hard time to get used to this Oculus than other bodies (especially when the gains are different to). This could explain the nausea and the dizzinies.\\
-\\
-TODO WAAROM ANDERSOM DAN WAT WIJ DACHTEN BETREFFENDE DE HOEK MEER/GELIJK/MINDER\\
-\\
-Another interesting fact is that a lot of people had no notion of what was happening in the virtual world compared to the real world. In fact it looked the same for a lot of people. But what would happen when there are objects in the room the people are walking through? Both in the experiment of Walker \cite{jwalker} and ours we had an empty room with just a paht. But what if there were buildings or trees around. Then when a person turns it can be likely that he or she notices faster that there is something 'wrong'  with the virtual world, because it seems very plausible that you notice that a trees turns slower or faster around you than that you notice that an empty room is turning slower or quicker around you. This would be an interesting subject for a followup experiment to disguss.
+\subsection{Results}
+Our goal was to discover if people who were busy doing a task would less (or more) notice that they are rotating with a different gain than people who can just focus on the road. 
+We expected that a person who was doing a task would less notice these gains, because its brain was busy doing other stuff. 
+Now if we look at the results in table \ref{tab1} we see a couple of collumns. 
+The first collumn denotes the testperson (or the number of the test). 
+The second collumn represents the gain. 
+In the experiment report we discussed that we would like to experiment with the gain from values of 0,5 till 1,5 where a gain of 1 meant that when a person turns with 1 degree in real life he also turns 1 degree in the virtual world. 
+Preparing the experiment we noticed that this was not implemented in the Oculus in this way. 
+A gain of 1 means that a person turns 1 degree in the real world and 2 degrees in the virtual world. 
+This is not wat we wanted so we let the gain fluctuate from -0,5 till 0,5 to get the same effectst that we wanted. 
+In the third collumn you see if the testperson did calculations during the experiment or not. 
+After every experiment we asked the testperson if he/she thought that she turned less/equal/more degrees in the virtual world than in the real world. 
+This is denoted in collumn 4. In collumn 5 the sex of the testperson was denoted and in collumn 6 we state if there were some techinical issues with the Oculus during the experiment which caused us to redo the experiment. 
+In the last collumn you can see if there are any remarks for the experiment.
+
+Now if we look at the remarks there is one thing that stands out. 
+A lot of persons felt nauseous or dizzy after the experiment. 
+Two people felt nauseous, three people felt dizzy and 1 person got a headache doing this experiment. 
+When you look closer you see that this happens four out of 6 times with a gain larger than 0,3 difference from the normal situation. 
+This shows us that the human body does indeed respond to the change in the gain. 
+It could be possible that the brain did not perceive what happened exactly, but the body felt something what was wrong and made it nauseous or dizzy. 
+Especially on the negative gains people felt a little bit sick after (or even during) the experiment. 
+Though this is not in the results we tried the Oculus ourself with gains of -0,5 and half of our group got nausious too, so when you make the gain to small this has a very negative effect on the body (though we cannot say this for sure since we do not have a lot of tests which confirm this statement). 
+A possible explanation for this is (including the cases with the positve gain) that people wear the Oculus for the first time in their life and they have not worn anything like this in their life before. 
+For a lot of people this thechinique is realy new to them and when you put on the headset a lot of people first have to get used to the Oculus. 
+It is not uncommon that some body's have a more hard time to get used to this Oculus than other bodies (especially when the gains are different to). 
+This could explain the nausea and the dizzinies.
+
+TODO WAAROM ANDERSOM DAN WAT WIJ DACHTEN BETREFFENDE DE HOEK MEER/GELIJK/MINDER
+
+Another interesting fact is that a lot of people had no notion of what was happening in the virtual world compared to the real world.
+In fact it looked the same for a lot of people. But what would happen when there are objects in the room the people are walking through? 
+Both in the experiment of Walker \cite{jwalker} and ours we had an empty room with just a paht. 
+But what if there were buildings or trees around. 
+Then when a person turns it can be likely that he or she notices faster that there is something 'wrong'  with the virtual world, because it seems very plausible that you notice that a trees turns slower or faster around you than that you notice that an empty room is turning slower or quicker around you. 
+This would be an interesting subject for a followup experiment to discuss.
