@@ -1,0 +1,82 @@
+\documentclass[12pt, aspectratio=169]{beamer} % aspectratio = 43 of 169
+\usepackage{changepage}
+\usepackage{nccmath}
+\usepackage{nicefrac}
+\usepackage{tikz}
+\usepackage{wasysym}
+
+% kleuren (theme=...): red (standaard), blue, cyan, orange, green
+% official=false: een mooie, maar niet-officiele stijl
+% official=true: de stijl die ze ook in PowerPoint hebben, met dat blauwe blokje onderaan
+% MERK OP: bij official=true is de nummering van de slides verkeerd!
+\usetheme[department=winuk,official=false,theme=cyan,innovation=false,titlebgimage=imgs/titlebg]{tue2008}
+\mode<presentation>
+
+\setbeamercolor{alerted text}{fg=tueblue}
+
+\graphicspath{{./imgs/}}
+
+% itemize symbols
+\defbeamertemplate{itemize item}{itemizesymbol}{\raisebox{1.5pt}{\scriptsize$\bullet$}}
+\defbeamertemplate{itemize subitem}{itemizesymbol}{\raisebox{1.5pt}{\tiny$\bullet$}}
+%\setbeamertemplate{itemize item}[itemizesymbol]
+%\setbeamertemplate{itemize subitem}[itemizesymbol]
+
+% fix the space before the colon after "Figure"
+\usepackage{caption}
+\DeclareCaptionLabelSeparator{nospacebefore}{: }
+\captionsetup{
+  labelsep = nospacebefore
+}
+
+% http://stackoverflow.com/a/5971923/962603
+\newenvironment{animationframe}
+  {\begin{frame}}
+  {\end{frame} \addtocounter{framenumber}{-1}}
+
+% either/or command
+\newcommand{\eo}[2]{#1\,/\,#2}
+
+\hypersetup{%
+  colorlinks=false%
+}
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Table of Contents}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+
+% title and author
+\title{Redirected Walking\\{\small Decoupling the virtual world from the real world}}
+\author{Tim~van~Dalen \and Robbert~Jongeling \and Jasper~Selman \and Ramon~de~Vaan \and Bart~van~Wezel}
+
+\begin{document}
+
+\begin{titleframe}
+\end{titleframe}
+
+\begin{frame}
+	\frametitle{Table of Contents}
+	\tableofcontents
+\end{frame}
+
+\section{Problem statement}
+\input{sections/problem}
+
+\section{Related work}
+\input{sections/related}
+
+\section{Experiment}
+\input{sections/experiment}
+
+\section{Results}
+\input{sections/results}
+
+\section{Conclusion}
+\input{sections/conclusion}
+
+\end{document}
