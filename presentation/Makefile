@@ -11,4 +11,4 @@ clean:
 remove: clean
 	rm -f $(main).pdf
 
-release: remove once.b once.c
+release: remove once.a once.b once.c
