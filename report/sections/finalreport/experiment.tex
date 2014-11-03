@@ -1,0 +1,68 @@
+\section{Experiment}
+
+\subsection{Detailed description}\label{sec:description}
+In our initial report we stated that we want to examine the following:
+At what rotational gains does the user notice that the virtual world and the real world rotations are different?
+And is this number different when a user is engaged in a task versus when a user is just walking around without specific tasks?
+
+This is something that was already investigated by some researchers \cite{steinicke2}. 
+Only they had a very small test-group. 
+So we would like to repeat their experiment and try to verify their results. 
+We will perform the experiment as described in the following section.
+
+The experiment consists of two cases. 
+We will conduct every case with a test group of 5 people. 
+The idea is that for every test-group the people have to wear an Oculus Rift. 
+Case one consists of following a (virtual) route. 
+The test person has to follow this route. 
+We start with a normal rotation gain and we will alter this gain a bit after the first try. 
+This means that a person has to walk the route a couple of times. 
+The gain will be in the range from 0,5 to 1,5 with steps of 0,1. 
+At start we strive to let a person walk the route 10 times (each time with 0,1 difference). 
+If this takes to long we will take bigger steps and let them walk the route less times. 
+At the end, when the test person has finished the route we will ask them if they noticed something strange during the experiment and if they did what it was. 
+If they do not know we will ask if they noticed something about the rotations and if they think they rotated more or less than in the real world. 
+After this the experiment is finished for case one.
+
+In the other case the test person will be asked to focus on a dot which is constantly in front of them and raise their hands when it changes color. 
+They have to walk the same route a couple of times with a different gain. 
+Afterwards the same questions are asked. 
+It is important that our test persons do not participate in both the cases, because once they answered the question they know where they have to pay attention at and therefore would give crooked results.
+
+The route we will use for this experiment will be a simple route with a lot of turns to test the gains. 
+The goal of this experiment is to discover at what rotational gains people notice that in the real world they are not rotating the same as in the virtual world. 
+We expect that the persons who are focusing on the dot do not notice the difference in rotations as quick as people who are focusing on the route. 
+
+\subsection{Relation between Experiment and Research Question}\label{sec:rel}
+The people that will participate in our experiment follow the course \emph{Interactive Virtual Environments}.
+This means they know at least something about redirected walking.
+This could influence their ability to perceive differences in the gains.
+Since this would influence both groups, we assume both groups are effected equally.
+This means that we can still compare the test group with the control group.
+
+Our groups will consist mostly of students.
+This means that we won't have a lot of diversity in age.
+This could influence their ability to perceive differences in the gains, because elder or younger people could be better or worse in perceiving the gains.
+Since this would influence both groups, we assume both groups are effected equally.
+This means that we can still compare the test group with the control group.
+
+We do not have enough people who are willing to do the experiment.
+This means that the results are not really reliable.
+We are trying to make this up with letting the  users do the experiment multiple times,  however this could influence the results.
+The control group could get bored and not focus at all and the task for the test group could be not engaging enough the next times, which means they have more time to focus.
+
+We miss a method to compare the perceived gains for each user.
+We are now limited to the answers of the questions of each user.
+How each user perceives and answers these question, can be different.
+Other methods could be asking the users how they think that they have walked and compare it with the path they walked in the virtual environment.
+However also this method is limited, because it is hard to grade how good or bad he perceived the gains.
+
+\subsection{Software Implementation}
+To implement the world, we have edited the \textit{TinyRoom} sample included in the Oculus SDK. 
+We multiply the input head yaw by a factor between 0,5 and 1,5.
+We have not yet created our virtual environment, we are confident that we can do this in a relatively small amount of time because we do know how it should be done.
+Also the implementation of the color-changing dot should be relatively straightforward using GL.
+
+A big challenge yet to conquer is positional tracking.
+The Oculus SDK 2 is equipped with a positional tracker but it seems not to be optimized for walking around in a room.
+We have tried to overcome this problem by using Bluetooth triangulation, but it was too slow to be feasible.

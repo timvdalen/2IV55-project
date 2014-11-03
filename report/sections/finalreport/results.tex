@@ -1,0 +1,104 @@
+\subsection{Bottlenecks in experiment design}
+We change the experiment a bit due to a lack of time, test subjects and software limitations.
+In short the original idea was that a test subject would walk a route in the virtual world, wearing an Oculus rift.
+The person would do this 10 times, each time with a different rotational gain.
+Afterwards, we would ask them a couple of questions about their perception of their rotation in the virtual world as compared to their rotation in the real world.
+
+Instead of having people actually walk a path, we use a Playstation 3 controller which only allows participants to move in the direction they are facing.
+The test subject stands in a spot and moves forward in the virtual world using the controller.
+When the path reaches a bend, the gyroscopic sensors of the Oculus Rift are to be used to rotate in the virtual world.
+We had the test subjects rotate their entire body, instead of just the head, as turning just the head might give away the gains used, due to straining of the neck.
+Additionally, when walking in real life, changing direction is mostly done with the entire body as well.
+
+Altering code to accommodate a color-changing dot proved to unfeasible in the given amount of time.
+A more practical and perhaps even more effective method to distract the test subjects from focusing on the path too much, is to have the test subjects do simple (arithmetic) calculations.
+This simultaneously serves as the previously planned task in which we engage test subjects.
+
+Asking the questions after multiple runs could result in the test subject mixing up test runs.
+On the other hand, asking the questions after every single test run may cause the test subject to be biased when doing the next run.
+Therefore, we let each test subject only do the experiment once and not 10 times.
+As a result, however, we did not manage to gather a lot of data, but we did manage to analyze this data and find some similarities or some peculiarities.
+
+\subsection{Results}
+Now that we have redefined our experiment we discuss the results.
+The goal of the experiment is to investigate at what rotational gains the test subjects notice that the virtual world and the real world differ.
+Secondly, we are interested in knowing whether this outcome is different when test subjects are engaged in a task (which we have redefined to be simple arithmetic).
+
+Now if we look at the results in table \ref{tab:experimentResults} we see a couple of columns.
+The first column denotes the test subject (or the number of the test).
+The second column represents the rotational gain in our implementation, this number is different from the gain as defined by Walker \cite{jwalker}.
+Here, 0 means a 1-to-1 mapping from real world to virtual world rotation.
+A negative value represents the factor with which virtual world rotation is less than the real world rotation.
+Similarly, the positive value represents the factor with which the virtual world rotation is more than the real world rotation.
+
+\begin{table}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|p{4.5cm}|}
+\hline
+\textbf{Testperson}	&	\textbf{Gain}	&	\textbf{Calculations}	&	\textbf{Rotation}	&	\textbf{Sex}	&	\textbf{Remarks}\\
+\hline
+1	&	-0.5	&	No	&	Less	&	Female	&	Felt nauseous to the point that she did not finish the experiment\\ \hline
+2	&	-0.4	&	No	&	Equal	&	Female	&	Felt a bit dizzy\\ \hline
+3	&	-0.3	&	No	&	Equal	&	Male	&	Had a minor headache afterwards, but this could be due to his high blood pressure\\ \hline
+4	&	-0.2	&	No	&	Less	&	Female	&	None\\ \hline
+5	&	0	&	No	&	Equal	&	Male	&	None\\ \hline
+6	&	0.2	&	No	&	Equal	&	Male	&	None\\ \hline
+7	&	0.3	&	No	&	Equal	&	Male	&	None\\ \hline
+8	&	0.4	&	No	&	Equal	&	Male	&	None\\ \hline
+9	&	0.5	&	No	&	Equal	&	Male	&	None\\ \hline
+10	&	-0.5	&	Yes	&	More	&	Male	&	Felt nauseous\\ \hline
+11	&	-0.3	&	Yes	&	Equal	&	Male	&	None\\ \hline
+12	&	-0.2	&	Yes	&	less	&	Male	&	None\\ \hline
+13	&	-0.1	&	Yes	&	Equal	&	Male	&	Had consumed a small amount alcohol beforehand\\ \hline
+14	&	0	&	Yes	&	More	&	Male	&	Started to feel nauseous, but stated he was prone to feeling nauseous\\ \hline
+15	&	0.1	&	Yes	&	More	&	Male	&	Felt dizzy\\ \hline
+16	&	0.2	&	Yes	&	Equal	&	Male	&	None\\ \hline
+17	&	0.3	&	Yes	&	More	&	Male	&	None\\ \hline
+18	&	0.4	&	Yes	&	Equal	&	Male	&	Felt dizzy\\ \hline
+19	&	0.5	&	Yes	&	Less	&	Male	&	Had consumed a small amount alcohol beforehand\\ \hline
+\end{tabular}
+\label{tab:experimentResults}
+\caption{Results of the experiment}
+\end{center}
+\end{table}
+
+The third column of table \ref{tab:experimentResults} indicates whether or not the test subject did simple arithmetic calculations during the experiment.
+Column 4 denotes the test subjects'  response to the following question: ``Did you think your rotation in the virtual world was less, equal or more than your rotation in the real world?"
+A ``less" in this column is a correct observation if the gain is negative.
+In column 5 the gender of the test subject is shown, we do not conclude anything based on this metric.
+In the last column you can see if there are any remarks for the experiment.
+
+The first thing that stands out from the results, is that a lot of subjects reported to feeling dizzy or nauseous after the experiment.
+Two people felt nauseous, three people felt dizzy and 1 person got a headache doing this experiment.
+However, this seems to happen over the entire spectrum of gains tested.
+Even though some people seem to be more prone to feeling nauseous from using the Oculus rift then others, having a negative gain (i.e. having to turn further in the real world to achieve a certain rotation in the virtual world) seems to intensify this sensation.
+In fact, a test subject opted to stop the experiment due to being very uncomfortable wearing the headset with a negative gain.
+This shows us that the human mind might in fact be influenced by the gain.
+
+Especially on the negative gains people felt a little bit sick after (or even during) the experiment.
+Even though this is not incorporated in the results we tried the Oculus ourselves with negative gains of up to -0,5 and half of our group got nauseous as well, so when you make the gain too small this has a very negative effect on the body (though we cannot say this for sure since we do not have a lot of tests which confirm this statement).
+A possible explanation for this is (including the cases with the positive gain) that people wear the Oculus for the first time in their lives and they have not worn anything like this in their life before.
+For a lot of people this technique is really new to them and when you put on the headset a lot of people first have to get used to the Oculus. 
+It is not uncommon for some people to have more trouble adjusting to the Oculus than others (especially having different gains).
+This could explain the nausea and the dizziness.
+People becoming slightly dizzy to the point of feeling nauseous is actually a side effect of the Oculus that has been reported in the media as well.
+We also think that the people who wear the Oculus  for the first time are less likely to notice diffrences in the gain, because people who did wear it before can compare the experiment with their previous experience which most likely had no differences in the gains. 
+
+Considering the rotational gain, 3 out of 8 (37.5\%) test subjects correctly noticed a negative gain, 4 out of 8 (50\%) did not notice anything and 1 (12.5\%) even reported a positive gain.
+Of the 9 test subjects that experimented with a positive gain, 2 (22.2\%) correctly noticed this, while 6 (66.7\%) did not notice and 1 (11.1\%) even reported a negative gain.
+More experiments need to be done to obtain statistically significant results.
+From the face of these results, we could say that the negative gain is noticed more often, this is in accordance with our expectations.
+We think the people reporting inverse results should be considered outliers.
+
+Another interesting fact is that a lot of people had no notion of what was happening in the virtual world compared to the real world.
+In fact it looked the same for a lot of people.
+Both the experiment of Walker \cite{jwalker} and ours take place in an empty virtual room with just a path.
+It might be interesting to see if the room having additional objects has another effect on the perception of the test subjects
+An interesting area for future research is to investigate how the results would differ if the virtual space had more noise, such as buildings or trees around.
+Then when a person turns it he or she may notice faster that there is something 'wrong'  with the virtual world.
+
+When we look at the results we see that the group without the tasks 2 out of 9 (22.2\%) noticed the differences in the gain, so 3 out of 9 (30\%)  test subjectives got it correctly.  The group with the task noticed differences in the gain in 6 out of 10 (60\%) times and got it correctly in 3 out of 10 (30\%) times. What is really strange is that the test subjectives of 0.5 and -0.5 noticed completely opposite gains as excepted. The test group without task had 3 out of 9 (30\%) people that felt nauseous or dizzy and the group with task had 4 out of 10 (40\%) people that got nauseous or dizzy. So with a quick glance at the results, we can only mention that there are no significant differences between the test groups, when we compare the correctly noticed differences in the gains and the people that felt dizzy. There is however a big difference between that noticed a difference in the gain, but we do not know for sure if there is a logical explanation or that it is just noise.
+\subsection{Comparison to related work}
+From our limited test-set, we can not deduce exact negative and positive gains from which the subjects start to notice that the virtual world is different from the real world.
+Our result that negative gains are noticed more is in accordance to the study by Walker \cite{jwalker}.
+For the possible application of letting people walk around in a large virtual world, but a small physical world, the positive gains are more important and so it is a desirable result that the effects of positive gains are less noticed.
