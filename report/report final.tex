@@ -2,9 +2,9 @@
 \usepackage{amssymb}
 \usepackage{booktabs}
 \usepackage{geometry}
-\usepackage[hidelinks]{hyperref}
+%\usepackage[hidelinks]{hyperref}
 \usepackage{listings}
-\usepackage{lipsum}
+%\usepackage{lipsum}
 \usepackage{graphicx}
 \usepackage{natbib}
 
@@ -63,9 +63,40 @@
 
 	\input{sections/finalreport/discussion}
 	%show what you have learned, show how this relates to what is known
+\newpage
+\begin{table}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|p{4.5cm}|}
+\hline
+\textbf{Testperson}	&	\textbf{Gain}	&	\textbf{Calculations}	&	\textbf{Rotation}	&	\textbf{Sex}	&	\textbf{Remarks}\\
+\hline
+1	&	-0.5	&	No	&	Less	&	Female	&	Felt nauseous to the point that she did not finish the experiment\\ \hline
+2	&	-0.4	&	No	&	Equal	&	Female	&	Felt a bit dizzy\\ \hline
+3	&	-0.3	&	No	&	Equal	&	Male	&	Had a minor headache afterwards, but this could be due to his high blood pressure\\ \hline
+4	&	-0.2	&	No	&	Less	&	Female	&	None\\ \hline
+5	&	0	&	No	&	Equal	&	Male	&	None\\ \hline
+6	&	0.2	&	No	&	Equal	&	Male	&	None\\ \hline
+7	&	0.3	&	No	&	Equal	&	Male	&	None\\ \hline
+8	&	0.4	&	No	&	Equal	&	Male	&	None\\ \hline
+9	&	0.5	&	No	&	Equal	&	Male	&	None\\ \hline
+10	&	-0.5	&	Yes	&	More	&	Male	&	Felt nauseous\\ \hline
+11	&	-0.3	&	Yes	&	Equal	&	Male	&	None\\ \hline
+12	&	-0.2	&	Yes	&	less	&	Male	&	None\\ \hline
+13	&	-0.1	&	Yes	&	Equal	&	Male	&	Had consumed a small amount alcohol beforehand\\ \hline
+14	&	0	&	Yes	&	More	&	Male	&	Started to feel nauseous, but stated he was prone to feeling nauseous\\ \hline
+15	&	0.1	&	Yes	&	More	&	Male	&	Felt dizzy\\ \hline
+16	&	0.2	&	Yes	&	Equal	&	Male	&	None\\ \hline
+17	&	0.3	&	Yes	&	More	&	Male	&	None\\ \hline
+18	&	0.4	&	Yes	&	Equal	&	Male	&	Felt dizzy\\ \hline
+19	&	0.5	&	Yes	&	Less	&	Male	&	Had consumed a small amount alcohol beforehand\\ \hline
+\end{tabular}
+\label{tab:experimentResults}
+\caption{Results of the experiment}
+\end{center}
+\end{table}
 
 	\bibliography{bibliography}
-
+	
 	\begin{appendix}
 	\input{sections/finalreport/appendices/tinyroom.tex}\label{tinyroom}
 	\end{appendix}
