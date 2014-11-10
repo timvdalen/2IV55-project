@@ -1,0 +1,59 @@
+\section{Experiment}
+
+
+As stated before, we want to investigate at what rotational (horizontal) gains does the user notice that the virtual world and the real world rotations are different? With the subresearch question is this number different when people are engaged in a task versus when a person is just walking around without specific tasks?\\
+\\
+This subject has already been investigated by other rechears \cite{steinicke2}. The reliability of this experiment could be doubted however, because this experiment involved a small group of testpersons and therefore some conclusions could be made which were in fact not true if you had a larger and thus more reliable test group. Though we are als not able to do experiments with a large group we still want to (re)do the experiment and see if we have results which are in accordance with the results Steiniche had.
+
+\subsection{Detailed description of the desired experiment}\label{sec:description}
+At first we designed an experiment which was like the one Steinicke conducted. We would conduct two experiments, one with a group of people which will not conduct a specific task during the experiment and one with a group of people who are engaged in a task during the experiment. Lets call the first experiment, experiment A and the second experiment B. Both experiments are executed multiple times with a single person per time per experiment. First we shall describe experiment A.\\
+In this experiment a single person would wear an Oculus Rift. With this Oculus that person could see a virtual world. This is a very simple empty room with on the floor a twisting path. The test person is asked to walk over that path in the virtual world until they can walk no further. The test person will walk through this room a couple of times. Each time we will change the rotational gain a bit, but the user does not know this. Afterwards we will ask the testperson some questions. Did they noticed something strange in the virtual world during the experiment and if so what was it? Next a little more specific did they notice something about the rotational gains? Were these higher or lower than in the real world? After they answered these questions they are finished with the experiment. During the experiment we will have rotational gains between the 0,5 and the 1,5. This means if the gain is 0,5 a person turns with half the speed in the virtual world as they would in the real and the gain of 1,5 means that a person would turn 1,5 times as fast in the virtual world as in the real world. Of course if the gain in 1, this simply means that there is no difference. \\
+Now lets describe experiment B. The people in this test case do exactly the same as all the people in experiment A only while walking on the path in the virtual world a couloured dot/circle is shown in front of them and they are asked to raise their hand when this dot changes colors. The goal is of course to distract them from the route. \\
+A very important thing to mention is that  if a person participates in experiment A, he or she cannot participate in experiment B, because they overlap so much. During the experiment we will use the motion track function of the Oculus Rift to track the route the testpersons are walking.
+
+\subsection{Relation between Experiment and Research Question and potentional problems}\label{sec:rel}
+The people that will participate in our experiment follow the course \emph{Interactive Virtual Environments}.
+This means they know at least something about redirected walking.
+This could influence their ability to perceive differences in the gains.
+Since this would influence both groups, we assume both groups are effected equally.
+This means that we can still compare the test group with the control group.
+
+Our groups will consist mostly of students.
+This means that we won't have a lot of diversity in age.
+This could influence their ability to perceive differences in the gains, because elder or younger people could be better or worse in perceiving the gains.
+Since this would influence both groups, we assume both groups are effected equally.
+This means that we can still compare the test group with the control group.
+
+We do not have enough people who are willing to do the experiment.
+This means that the results are not really reliable.
+We are trying to make this up with letting the users do the experiment multiple times, however this could influence the results.
+The control group could get bored and not focus at all and the task for the test group could be not engaging enough the next times, which means they have more time to focus.
+
+We miss a method to compare the perceived gains for each user.
+We are now limited to the answers of the questions of each user.
+How each user perceives and answers these question, can be different.
+Other methods could be asking the users how they think that they have walked and compare it with the path they walked in the virtual environment.
+However also this method is limited, because it is hard to grade how good or bad he perceived the gains.
+
+\subsection{Bottlenecks in the experiment design and eventual experiment}
+When we started testing with the Oculus Rift we encoutered several problems, these problems meant that we had to alter our experiment on a couple of points, because otherwise it could not be conducted. The first problem was the motion tracking. We used a development kit 2 to work with the rift and it was stated that this kit had motion tracking, but in reality this motion tracking was so bad it could track a few steps to the side and only one or two steps to the front and back. This means that this was usable for a gaming console like the Wii where a person stands on a single place and only turns its body a bit, but for tracking a route a person is walking this was totally useless. We tried to fix this by using bluetooth triangulation with our cellphones. This means we would place our phones in the corners of the physical room and they send sighnals to the Oculus so we could measure where it was. In theory this was a good solution but in pratical this was way too slow to use it. At this point we gave up the tracking and we used another solution for "walking". We gave the test person a Playstation 3 controller which only allows participants to move in the direction they are facing.
+The test subject stands in a spot and moves forward in the virtual world using the controller.
+When the path reaches a bend, the gyroscopic sensors of the Oculus Rift are to be used to rotate in the virtual world.
+We had the test subjects rotate their entire body, instead of just the head, as turning just the head might give away the gains used, due to straining of the neck.
+Additionally, when walking in real life, changing direction is mostly done with the entire body as well.\\
+\\
+The next problem we had was a lack of time to test with the Oculus Rift. We were only allowed to use the Oculus two hours a week. Unfortunately we wasted one of these sessions on a broken Oculus and one on fixing the tracking problem. As a result we had not a lot of time left to do the actual experiment and inplement the color changing dot. This made the implementation of the dot unfeasible. Therefore we chose a more practical and perhaps even more effective method to distract the test subjects from focusing on the path too much, we gave the test subjects simple (arithmetic) calculations to solve.
+This simultaneously serves as the previously planned task in which we engage test subjects.\\
+\\
+Another bottleneck in our original experiment was the fact that we would ask the questions after multiple runs.This could result that the test subject could mix up test runs. On the other hand, asking the questions after every single test run may cause the test subject to be biased when doing the next run.
+Therefore, we let each test subject only do the experiment once and not multiple times.
+As a result, however, we did not manage to gather a lot of data, but we did manage to analyze this data and find some similarities or some peculiarities.
+\subsection{Software Implementation}
+To implement the world, we have edited the \textit{TinyRoom} sample included in the Oculus SDK. 
+We multiply the input head yaw by a factor between 0,5 and 1,5.
+We have not yet created our virtual environment, we are confident that we can do this in a relatively small amount of time because we do know how it should be done.
+Also the implementation of the color-changing dot should be relatively straightforward using GL.
+
+A big challenge yet to conquer is positional tracking.
+The Oculus SDK 2 is equipped with a positional tracker but it seems not to be optimized for walking around in a room.
+We have tried to overcome this problem by using Bluetooth triangulation, but it was too slow to be feasible.

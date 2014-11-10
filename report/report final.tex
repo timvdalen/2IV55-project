@@ -1,0 +1,73 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{geometry}
+%\usepackage[hidelinks]{hyperref}
+\usepackage{listings}
+%\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{natbib}
+
+\bibliographystyle{plain}
+
+\geometry{
+	includeheadfoot,
+	margin=2.54cm
+}
+
+\title{
+	2IV55 Interactive Virtual Environments: Final Report \\
+	\small{Group 2}
+}
+\author{
+	Tim van Dalen (0744839)
+	\and
+	Robbert Jongeling (0747896)
+	\and
+	Jasper Selman (0741516)
+	\and
+	Ramon de Vaan (0758873)
+	\and
+	Bart van Wezel (0740608)
+}
+\date{\today}
+
+\begin{document}
+	\maketitle
+	
+	\begin{abstract}
+	$<$abstract$>$
+	\end{abstract}
+		
+	\input{sections/finalreport/introduction}\label{sec:intro}
+	%set the context, what is the problem?, what are the questions?, what is the approach ?
+
+	\input{sections/finalreport/relatedwork}
+	%stay to the point ! only that work that relates to your problem/questions
+	
+	\input{sections/finalreport/experiment}
+
+	%Experiment:
+	%–detailed description of experiment
+	%	• what is the user task / conditions ?
+	%	• what is the procedure ? (< 15 min per user !)
+	%–discuss relation “research question” <--> “experiment”
+	%	• which assumptions are you making ?
+	%	• how “complete” is the experiment ?
+	%	• what is missing ?
+	%– software implementation
+	%	• what have you done? indication of how much work was needed?
+	
+	\input{sections/finalreport/results}
+	%results
+
+	\input{sections/finalreport/discussion}
+	%show what you have learned, show how this relates to what is known
+
+	\bibliography{bibliography}
+	
+	\begin{appendix}
+	\input{sections/finalreport/appendices/tableresults.tex}\label{Results}
+	\input{sections/finalreport/appendices/tinyroom.tex}\label{tinyroom}
+	\end{appendix}
+\end{document} 
