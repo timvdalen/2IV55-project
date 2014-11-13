@@ -54,7 +54,7 @@ As for software implementation, we defined several objectives.
 First of all, we have to produce a virtual environment, in which we can place the test subjects.
 This virtual environment should include a path on which the user is to walk, which should contain bends, such that the user is forced to rotate in order to traverse it.
 Accordingly, the software should read the input from the Oculus Rift, allowing real-world head movements to be translated to virtual world rotations.
-Apart from rotating, the test subject should also be able to move around in the virtual environment. 
+Apart from rotating, the test subject should also be able to move around in the virtual environment.
 Furthermore, the software should contain a manners of having the test subject do additional tasks, such that we can split the test subjects into two groups: one having to do an extra task, and a control group, such that we can see if mentally engaging task influence the results.\\
 Additionally, the ones conducting the experiment should be able to easily adjust the rotational gains discussed in previous sections.
 Since every test subject is tested with but a single rotational gain, the adjustments to not have to be performed on the fly, but might be done in between experiments, when the next subject is instructed on the experiment.
@@ -115,7 +115,7 @@ Though our access to the underlying Oculus code was limited, there was in fact a
 In the altered code, we save the current rotation of the Oculus, and calculate the difference with the previous rotation every frame.
 This then corresponds to the actual rotation change that was made in every frame.
 We can then multiply this by the rotational gains we are trying to achieve, and then interpret this as mouse movement. \\
-Let $r$ denote the rotational gain, $d$ denote the difference in angle of the Oculus Rift between two frames, and $m$ the exported mouse output. 
+Let $r$ denote the rotational gain, $d$ denote the difference in angle of the Oculus Rift between two frames, and $m$ the exported mouse output.
 Say that normal rotation, without any alterations has a rotational gains value of $r = 1$, as defined by the paper we have studied.
 We can then compute the exported mouse output as: $m = d(r - 1)$.
 In this way, we are able to have both negative and positive rotational gains, or no gains at all. \\
@@ -128,7 +128,7 @@ After implementing the solution mentioned above, we went ahead and tested it our
 Whilst the solution did seem to work, we noticed that it also introduced a bug to the system.
 We noticed that with high positive gains, the virtual world seemed to jump in rotation, where the user would suddenly face in a different direction.
 This occurred when the user would rotate a certain number of degrees from the center, and occurred at either sides.
-After testing, we concluded that where this jump occurred was indeed correlated to the positive gain that was set. 
+After testing, we concluded that where this jump occurred was indeed correlated to the positive gain that was set.
 With a gain of 1, i.e. natural rotation, there was no jump.
 At gains higher than one, the jump would occur between the initial rotation and half a circle, closing in on the initial rotation the higher the gain got.
 At gains lower than one, the jump would occur when spinning over half a circle, going further away as the gain decreased. \\
@@ -141,10 +141,10 @@ However, as explained above, we have tested with even higher rotational gains, w
 At gains high enough, for example 2 or higher, path traversal would become increasingly difficult, to a point in which it was not possible at all. \\
 Even though we had to give up on solving the bug, in retrospect, we do have an idea on what may have caused it.
 As previously explained, we were able to read the current rotation from the Oculus Rift.
-What we had not checked, was how the altered data was saved and used. 
-Instead of saving absolute rotation, the code may save values between 0 and 360 degrees. 
+What we had not checked, was how the altered data was saved and used.
+Instead of saving absolute rotation, the code may save values between 0 and 360 degrees.
 As the user would turn around, especially with higher rotational gains, the 360 degrees may be reached much sooner.
-The headset might then jump from 360 back to 1 degrees, instead of going to 361 degrees of rotation. 
+The headset might then jump from 360 back to 1 degrees, instead of going to 361 degrees of rotation.
 The code as is would interpret this as a change in rotation of 359 degrees, which may indeed cause a jump.
 This does correspond to what we have seen in testing, where higher rotational gains make the virtual world jump sooner, since the edges of the rotation would then be reached sooner, and vice versa for lower rotational gains. \\
 The bug may be solved by changing the difference calculation.
@@ -153,16 +153,24 @@ This would work in most cases, as it is unlikely that a user would spin over 180
 However, since we no longer have an Oculus Rift, we will not be able to test this. \\
 
 Some of the requirements were actually made much easier to achieve by using the code provided by the SDK.
-As mentioned earlier, the SDK provided us with an executable demo world. 
+As mentioned earlier, the SDK provided us with an executable demo world.
 This code already included input for the Oculus Rift, mouse input, collision detection, and an actual world with walls and a floor.
 In fact, we could quite easily find the piece of code responsible for creating walls, and adapted it, to create a path instead.
 Walls are creating by providing underlying code with a set of vertices - points in 3d space.
 Creating a path was as simple as adding a list of vertices a tad lower to the ground.
+The result can be observed in Figure \ref{fig:tinyroom}.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\linewidth]{sections/finalreport/images/tinyroom.png}	
+	\caption{The virtual environment in which the experiment took place.}
+	\label{fig:tinyroom}
+\end{figure}
 
 \subsubsection{Changes in Requirements}
 Some of the requirements specified turned out to be unfeasible in the given amount of time.
 Initially, the experiment was designed to have the test subjects walk around in real life as well.
-However, tracking seemed to be rather difficult. 
+However, tracking seemed to be rather difficult.
 The Oculus Rift DK2 does come with a movement tracker, but it was not efficient enough for large scale tracking.
 We then played with the idea to track a test subject using bluetooth, but this turned out to be too slow.
 Eventually, we settled with not having the test subjects move at all, and instead let them move around in the virtual world using a joystick. \\
@@ -172,7 +180,7 @@ Specifically, we relied upon a tool called \textit{MotioninJoy}.
 This not only allowed us to use the controller with windows, but also allowed us to remap the controls to specific keys or macros in windows.
 Counterintuitively, we actually had to restrict the test subjects in their movement.
 The software should only allow the test subjects to move forward, as allowing the test subjects to move in other directions, would allow them to traverse the path without rotating, which is key in this experiment.
-To solve this, we used the MotioninJoy tool to map only the forward controls to the letter `w' on the keyboard. 
+To solve this, we used the MotioninJoy tool to map only the forward controls to the letter `w' on the keyboard.
 In the demo program, keyboard keys are already mapped to movements in the virtual environment, where `w' corresponds to forward motion.
 This allowed us to use the controller to have the user move in the virtual world efficiently. \\
 
@@ -184,4 +192,4 @@ In contradiction to the walls, it was not as simple as simply putting in a list 
 Moreover, having it change colour would be harder still, requiring much more code.
 Additionally, we would have to create methods to have it change somewhat randomly, as a regular change of colour would not be enough to keep the test subject sufficiently engaged.
 This was not possible in the time we had to our disposal. \\
-In the end, a more easy, and perhaps even more efficient means of meeting this requirement, was to simply have the test subject solve simple arithmetic calculations.
+In the end, a more easy, and perhaps even more efficient means of meeting this requirement, was to simply have the test subject solve simple arithmetic calculations. 
