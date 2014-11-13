@@ -1,2 +1,32 @@
 \section{Tinyroom Implementation}
-//TODO include the useful implementation files
+\lstset{language=C++}
+
+\begin{figure}[h]
+\begin{lstlisting}[breaklines=true]
+float lastHeadYaw = -123456;
+//Here, the gain is set such that 0 means no gains
+const float gain = -0.3; 
+
+bool Util_RespondToControls(float & EyeYaw, Vector3f & EyePos, Quatf PoseOrientation)
+{
+    //Mouse rotation
+    EyeYaw += AdditionalYawFromMouse;
+    AdditionalYawFromMouse = 0;
+
+    //Get HeadYaw
+    float tempHeadPitch, tempHeadRoll, HeadYaw, GamepadYaw;
+    PoseOrientation.GetEulerAngles<Axis_Y, Axis_X, Axis_Z>(&HeadYaw,&tempHeadPitch, &tempHeadRoll);
+
+    //Test if the headYaw equals the initially set headyaw.
+    //Since we can't read the headyaw before the program,
+    //We instead chose an initial value that will definitely
+    //not be equal to any headyaw during the program.
+	if (lastHeadYaw != -123456) {
+		EyeYaw += gain * (HeadYaw - lastHeadYaw);
+	}
+	lastHeadYaw = HeadYaw;
+
+    //Matrix computations etc.
+}
+\end{lstlisting}
+\end{figure}
