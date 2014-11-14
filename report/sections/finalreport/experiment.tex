@@ -6,8 +6,8 @@ This subject has already been investigated by other research \cite{steinicke1}\c
 In this experiment, we are interested in verifying the results in this research and extending it with our sub-question.
 
 \subsection{Detailed description of the desired experiment}\label{sec:description}
-At first we designed an experiment which was like the one Steinicke et al. conducted. 
-We would conduct two experiments, one (experiment A) with a group of people which will not conduct a specific task during the experiment and one (experiment B) with a group of people who are engaged in a task during the experiment. 
+At first we designed an experiment similar to the experiments Steinicke et al. conducted. 
+We would conduct two experiments, one (experiment A) with a group of people which would not conduct a specific task during the experiment and one (experiment B) with a group of people who would be engaged in a task during the experiment. 
 Both experiments are executed multiple times with a single person per time per experiment. 
 
 First we describe experiment A.
@@ -15,14 +15,13 @@ In this experiment, a single person would wear an Oculus Rift in which a virtual
 This is a very simple empty room with on the floor a twisting path. 
 The test person would be asked to walk over that path in the virtual world until they can walk no further. 
 The test person would walk through this room a couple of times. 
-Each time we will change the rotational gain a bit, but the user does not know this on beforehand. 
-Afterwards we will ask the test subject some questions. 
-Did they noticed something strange in the virtual world during the experiment and if so what was it? 
-Next, we ask a little more detailed question: did they notice something about the rotational gains? 
-Were these higher or lower than in the real world? 
-After they answered these questions they are finished with the experiment and are informed of the purpose of our experiment.
-During the experiment we will have rotational gains between 0.5 and the 1.5. 
-This means if the gain is 0.5 a person turns with half the speed in the virtual world as they would in the real and the gain of 1.5 means that a person would turn 1.5 times as fast in the virtual world as in the real world. 
+Each time we would change the rotational gain a bit, but the user would not know this on beforehand. 
+Afterwards we would ask the test subject some questions. 
+Did they notice something strange in the virtual world during the experiment and if so what was it? 
+Next, we ask a little more detail: did they notice something concerning their rotation? 
+And then specifically, did they think the virtual world rotated slower, equal or faster than their rotation in the real world?
+We would experiment with rotational gains between 0.5 and 1.5.
+When the gain is 0.5, a person turns with half the speed in the virtual world as they would in the real and the gain of 1.5 means that a person would turn 1.5 times as fast in the virtual world as in the real world. 
 Of course if the gain in 1, this simply means that there is no difference.
 
 Now lets describe experiment B. The subjects in this experiment do exactly the same as all the subjects in experiment A only while walking on the path in the virtual world a coloured disk is shown in front of them and they are asked to raise their hand when this dot changes colour. 
@@ -54,16 +53,16 @@ Other methods could be asking the users how they think that they have walked and
 However also this method is limited, because it is hard to grade how good or bad she perceived the gains.
 
 \subsection{Bottlenecks in the experiment design and eventual experiment}
-When we started our implementation using the Oculus Rift we encountered several problems which lead to us redefining our experiment on some points. 
+When we started our implementation using the Oculus Rift SDK, we encountered several problems which lead to us redefining our experiment on some points. 
 The first problem was motion tracking, the Oculus dev kit 2 has a motion sensor but its reach proved insufficient for our needs.
-Motion tracking was only usable for a gaming console like the Nintendo Wii where a person stands on a single place and only turns her body a bit, but for tracking a route a person is walking this was infeasible. 
+Motion tracking appears to be only usable for a gaming console like the Nintendo Wii where a person stands on a single place and only turns her body a bit, but for tracking a route a person is walking this was infeasible. 
 We tried to fix this by using bluetooth triangulation with our cellphones. 
 This means we would place our phones in the corners of the physical room and they send signals to the Oculus so we could measure where it was. 
 In theory this was a good solution but in practice this was way too slow to use. 
 
 At this point we gave up the tracking and we used another solution for "walking". 
 We gave the test person a Playstation 3 controller which only allows participants to move in the direction they are facing.
-The test subject stands in a spot and moves forward in the virtual world using the controller.
+The test subject stands in one spot and moves forward in the virtual world using the controller.
 When the path reaches a bend, the gyroscopic sensors of the Oculus Rift are to be used to rotate in the virtual world.
 We had the test subjects rotate their entire body, instead of just the head, as turning just the head might give away the gains used, due to straining of the neck.
 Additionally, when walking in real life, changing direction is mostly done with the entire body as well.
@@ -75,38 +74,39 @@ Additionally, when walking in real life, changing direction is mostly done with 
 \end{figure}
 
 The next problem we had was a lack of time to test with the Oculus Rift. 
-We were only allowed to use the Oculus two hours a week. 
-Unfortunately we wasted one of these sessions on a broken Oculus and one on fixing the tracking problem. 
+We had access to an Oculus dev kit 2 for two hours each week.
+Unfortunately we wasted one of these sessions on a broken Oculus and one on determining that the motion tracker was insufficient for our needs.
 As a result we had not a lot of time left to do the actual experiment and implement the colour changing dot. 
 This made the implementation of the dot infeasible. 
-Therefore we chose a more practical and perhaps even more effective method to distract the test subjects from focusing on the path too much, we gave the test subjects simple (arithmetic) calculations to solve.
-This simultaneously serves as the previously planned task in which we engage test subjects.\\
+Therefore we chose a more practical and perhaps even more effective method to distract the test subjects from focusing on the path too much, we gave the test subjects simple (arithmetic) calculations to solve.\\
 
-Another bottleneck in our original experiment was the fact that we would ask the questions after multiple runs.
+Another bottleneck in our original experiment was asking the questions after multiple runs.
 This could result in the test subject mixing up test runs. 
 On the other hand, asking the questions after every single test run may cause the test subject to be biased when doing the next run.
 Therefore, we let each test subject only do the experiment once and not multiple times.
-As a result, however, we did not manage to gather a lot of data, but we did manage to analyse this data and find some similarities or some peculiarities.
+As a result however, we did not manage to gather a lot of data, but we did manage to analyse this data and find some similarities or some peculiarities.
 Results are discussed in Section \ref{sec:results}.
 
 \subsection{Software Implementation}
 \subsubsection{Requirements}
-As for software implementation, we defined several objectives.
+As for the software implementation, we defined several objectives.
 First of all, we have to produce a virtual environment, in which we can place the test subjects.
 This virtual environment should include a path on which the user is to walk, which should contain bends, such that the user is forced to rotate in order to traverse it.
 Accordingly, the software should read the input from the Oculus Rift, allowing real-world head movements to be translated to virtual world rotations.
 Apart from rotating, the test subject should also be able to move around in the virtual environment.
 Furthermore, the software should contain a manners of having the test subject do additional tasks, such that we can split the test subjects into two groups: one having to do an extra task, and a control group, such that we can see if mentally engaging task influence the results.\\
 Additionally, the ones conducting the experiment should be able to easily adjust the rotational gains discussed in previous sections.
-Since every test subject is tested with but a single rotational gain, the adjustments to not have to be performed on the fly, but might be done in between experiments, when the next subject is instructed on the experiment.
+Since every test subject is tested with a single rotational gain, the adjustments do not have to be performed on the fly, but might be done in between experiments. 
+We can use the time when the next subject is instructed on the experiment to perform these adjustments.
 
 \subsubsection{Implementation challenges}
 Some of these requirements could be met rather easily, but seemed to make other requirements more difficult to achieve.
 Along with the drivers and utility software of the Oculus Rift, we downloaded the Oculus SDK, the software development kit.
-Initially, we had planned on having to make the virtual environment ourselves.
+Initially, we had planned on creating the virtual environment ourselves, from scratch.
 This would be possible, as we have had some experience in both software development and visualization, but it would still cost a substantial amount of time.
 Since experiments had to be conducted as well, this would prove infeasible in the time span during which the project had to be completed.
-Luckily, the SDK came with executable code examples, which both allowed us test the Oculus Rift, and served as a base project for us to make adjustments to. \\
+Luckily, the SDK came with executable code examples, which both allowed us test the Oculus Rift, and served as a base project for us to make adjustments to. 
+We chose the Tinyroom example to build our solution on.\\
 However, using given code does come with consequences.
 Before getting to alter the code, we must first understand the code given to us.
 The projects actually contained quite a lot of code, so understanding the code and determining which parts are interesting to us is a rather lengthy process.
@@ -133,21 +133,21 @@ During the process of trying to understand the given code, we found that the rat
 The frame rate of games and visualization programs is usually set to a constant frame rate, which the computer attempts to meet during execution.
 Indeed we found that in the code, the frame rate was set at 60 frames per second (FPS).
 We figured that if we could adjust the frame rate of the program, the rotation rate would change as well, resulting in rotational gains if the FPS is set to a higher amount.
-The correlation is linear, i.e. if we were to set the frame rate to 90 FPS, instead of 60, the resulting gain would be $1.5$.
+The correlation is linear, e.g. if we were to set the frame rate to 90 FPS, instead of 60, the resulting gain would be $1.5$.
 This method would allow us to change the rotational gain, simply by editing a single value in the code.
 In contrast to the previously suggested method, this can be done very quickly in between test subjects.
 However, this method has certain disadvantages as well. \\
 Increasing the frame rate also increases the computational load of the program.
-While the computer was able to maintain a frame rate of 60 FPS without too many problems, increasing it might become heavy a load for the computer.
+While the computer was able to maintain a frame rate of 60 FPS without too many problems, increasing it might become too heavy a load for the computer.
 A possible outcome would be that the computer cannot maintain a given frame rate, and thus the rotational gains would not be constant, which would make the test results inaccurate. \\
 Then again, even if the computer would be able to render the program at a higher frame rate, the frame rate itself might influence the results.
 In our experiment, we test both positive and negative rotational gains.
 To achieve negative rotational gains, the frame rate would have to be lowered.
 However, the user would notice a drop in frame rate.
-A lower frame rate would result in a less smooth image, which might affect the level of immersion in the program.
+A lower frame rate would result in a less smooth image, which might affect the test subjects feeling of presence.
 Since we want our results to be dependent solely on the rotational gains, this method would not suit our needs either. \\
 
-Finally, we noticed the the program accepted mouse input.
+Finally, we noticed that the program accepted mouse input.
 As the mouse moves, its location, relative to its previous location, is saved to a variable.
 Then, every frame, this relative location is translated to a rotation in the virtual world, and the relative location is reset.
 The extra mouse rotation is calculated separately from the Oculus Rift input.
@@ -174,7 +174,7 @@ After testing, we concluded that where this jump occurred was indeed correlated 
 With a gain of 1, i.e. natural rotation, there was no jump.
 At gains higher than one, the jump would occur between the initial rotation and half a circle, closing in on the initial rotation the higher the gain got.
 At gains lower than one, the jump would occur when spinning over half a circle, going further away as the gain decreased. \\
-Since we had had some problems with the Oculus Rift before, we faced an imminent shortage of time, and had to get started with testing as soon as possible.
+Since we had had some problems with the Oculus Rift before, we faced an imminent shortage of time and had to get started with testing as soon as possible.
 As a result, we were not able to locate and solve the bug completely, but came up with a temporary solution.
 In between test subjects, a member of our team would put on the Oculus Rift, and attempt to find the jump in rotation.
 Using the mouse, we could then rotate the virtual world to a point such that it was farthest away from the jump in both directions.
@@ -198,7 +198,7 @@ Some of the requirements were actually made much easier to achieve by using the 
 As mentioned earlier, the SDK provided us with an executable demo world.
 This code already included input for the Oculus Rift, mouse input, collision detection, and an actual world with walls and a floor.
 In fact, we could quite easily find the piece of code responsible for creating walls, and adapted it, to create a path instead.
-Walls are creating by providing underlying code with a set of vertices - points in 3d space.
+Walls are creating by providing underlying code with a set of vertices - points in three dimensional space.
 Creating a path was as simple as adding a list of vertices a tad lower to the ground.
 The result can be observed in Figure \ref{fig:tinyroom}.
 
